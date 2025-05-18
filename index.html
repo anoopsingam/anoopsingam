@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoop N - Senior Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'swiggy-orange': '#fc8019',
+                        'swiggy-dark': '#1f2937',
+                        'swiggy-light': '#f8fafc',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                        'scale-in': 'scaleIn 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(252, 128, 25, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(252, 128, 25, 0.6)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #fc8019 0%, #ff6b35 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .skill-progress {
+            transition: width 1s ease-in-out;
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #fc8019;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .timeline-item {
+            opacity: 0;
+            animation: slide-up 0.6s ease-out forwards;
+        }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-swiggy-orange to-red-500 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-gray-800">Anoop N</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-swiggy-orange">Home</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-swiggy-orange">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-swiggy-orange">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-swiggy-orange">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-swiggy-orange">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg opacity-90"></div>
+        <div class="absolute inset-0">
+            <svg class="w-full h-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                        <stop offset="100%" stop-color="rgba(255,255,255,0.05)" />
+                    </linearGradient>
+                </defs>
+                <circle cx="200" cy="150" r="100" fill="url(#grad1)" class="animate-float" />
+                <circle cx="1000" cy="200" r="150" fill="url(#grad1)" class="animate-pulse" />
+                <circle cx="800" cy="600" r="80" fill="url(#grad1)" class="animate-float" />
+                <rect x="100" y="400" width="150" height="150" rx="20" fill="url(#grad1)" class="animate-pulse" />
+                <polygon points="900,400 1000,350 1100,400 1050,500" fill="url(#grad1)" class="animate-float" />
+            </svg>
+        </div>
+        <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+            <div class="mb-8">
+                <div class="w-40 h-40 mx-auto mb-6 bg-white rounded-full shadow-2xl flex items-center justify-center animate-glow">
+                    <i class="fas fa-code text-6xl text-swiggy-orange"></i>
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+                Anoop N
+            </h1>
+            <h2 class="text-2xl md:text-3xl mb-6 opacity-90 animate-slide-up" style="animation-delay: 0.2s;">
+                Senior Software Engineer
+            </h2>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.4s;">
+                I build scalable backend systems, IoT solutions & ERP platforms that drive digital transformation
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.6s;">
+                <button class="bg-white text-swiggy-orange px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-download mr-2"></i>Download Resume
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-swiggy-orange transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-envelope mr-2"></i>Get In Touch
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Skills & Expertise</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive toolkit built through 5+ years of backend development and IoT innovation
+                </p>
+                <div class="w-24 h-1 bg-swiggy-orange mx-auto mt-6"></div>
+            </div>
+
+            <!-- Languages -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-code text-swiggy-orange mr-3"></i>Languages
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-hover bg-gray-50 p-6 rounded-xl border-l-4 border-swiggy-orange">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-semibold text-gray-800">PHP</span>
+                            <i class="fab fa-php text-2xl text-blue-600"></i>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-progress bg-swiggy-orange h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">Expert</span>
+                    </div>
+                    <div class="card-hover bg-gray-50 p-6 rounded-xl border-l-4 border-swiggy-orange">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-semibold text-gray-800">JavaScript</span>
+                            <i class="fab fa-js-square text-2xl text-yellow-500"></i>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-progress bg-swiggy-orange h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">Advanced</span>
+                    </div>
+                    <div class="card-hover bg-gray-50 p-6 rounded-xl border-l-4 border-swiggy-orange">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-semibold text-gray-800">Python</span>
+                            <i class="fab fa-python text-2xl text-green-600"></i>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-progress bg-swiggy-orange h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">Advanced</span>
+                    </div>
+                    <div class="card-hover bg-gray-50 p-6 rounded-xl border-l-4 border-swiggy-orange">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-semibold text-gray-800">Golang</span>
+                            <i class="fas fa-code text-2xl text-blue-500"></i>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="skill-progress bg-swiggy-orange h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <span class="text-sm text-gray-600">Proficient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-layer-group text-swiggy-orange mr-3"></i>Frameworks
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card-hover bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-laravel text-2xl text-red-600 mr-3"></i>
+                            <span class="font-semibold text-gray-800">Laravel</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Expert in building robust PHP applications</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-flask text-2xl text-green-600 mr-3"></i>
+                            <span class="font-semibold text-gray-800">Flask</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Lightweight Python web framework</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-leaf text-2xl text-green-700 mr-3"></i>
+                            <span class="font-semibold text-gray-800">Django</span>
+                        </div>
+                        <p class="text-sm text-gray-600">Full-stack Python development</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-tools text-swiggy-orange mr-3"></i>Technologies
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-database text-blue-600 mr-3"></i>
+                        <span class="font-medium">MySQL</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fab fa-docker text-blue-500 mr-3"></i>
+                        <span class="font-medium">Docker</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-server text-green-600 mr-3"></i>
+                        <span class="font-medium">MQTT</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-memory text-red-600 mr-3"></i>
+                        <span class="font-medium">Redis</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fab fa-github text-gray-800 mr-3"></i>
+                        <span class="font-medium">GitHub Actions</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-fire text-orange-500 mr-3"></i>
+                        <span class="font-medium">Firebase</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-credit-card text-blue-700 mr-3"></i>
+                        <span class="font-medium">Razorpay</span>
+                    </div>
+                    <div class="card-hover bg-white p-4 rounded-lg border shadow-sm flex items-center">
+                        <i class="fas fa-microchip text-purple-600 mr-3"></i>
+                        <span class="font-medium">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Professional Journey</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    5+ years of building innovative solutions across fintech, IoT, and enterprise systems
+                </p>
+                <div class="w-24 h-1 bg-swiggy-orange mx-auto mt-6"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-swiggy-orange"></div>
+
+                <!-- Experience Items -->
+                <div class="space-y-12">
+                    <!-- Razorpay -->
+                    <div class="timeline-item flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-l-4 border-swiggy-orange">
+                                <div class="flex items-center justify-end mb-3">
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Current</span>
+                                    <i class="fas fa-credit-card text-2xl text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Product Development Engineer</h3>
+                                <p class="text-swiggy-orange font-semibold mb-2">Razorpay (via Eternalight Infotech)</p>
+                                <p class="text-gray-600 mb-3">Sep 2024 - Present</p>
+                                <ul class="text-sm text-gray-700 space-y-1 text-left">
+                                    <li>• QR Engineering - UPI Core Platform specialist</li>
+                                    <li>• Migrated 220+ A/B testing flows for QR payments</li>
+                                    <li>• Developed India's first indigenous Soundbox solution</li>
+                                    <li>• Coordinated bank integrations for UPI QR infrastructure</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">UPI</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">QR Payments</span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Fintech</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center justify-center w-12 h-12 bg-swiggy-orange rounded-full border-4 border-white shadow-lg z-10">
+                            <i class="fas fa-qrcode text-white"></i>
+                        </div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- FPLE Technologies -->
+                    <div class="timeline-item flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="relative flex items-center justify-center w-12 h-12 bg-white rounded-full border-4 border-swiggy-orange shadow-lg z-10">
+                            <i class="fas fa-server text-swiggy-orange"></i>
+                        </div>
+                        <div class="flex-1 pl-8">
+                            <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-r-4 border-swiggy-orange">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-code text-2xl text-green-600 mr-3"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Senior Backend Developer</h3>
+                                <p class="text-swiggy-orange font-semibold mb-2">FPLE Technologies</p>
+                                <p class="text-gray-600 mb-3">Jun 2024 - Jul 2024</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• Developed scalable Laravel backend systems</li>
+                                    <li>• Built robust RESTful API architectures</li>
+                                    <li>• Optimized MySQL for high-volume transactions</li>
+                                    <li>• Implemented best practices and code reviews</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Laravel</span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">REST API</span>
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GBC Solutions -->
+                    <div class="timeline-item flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-l-4 border-swiggy-orange">
+                                <div class="flex items-center justify-end mb-3">
+                                    <i class="fas fa-industry text-2xl text-purple-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Enterprise Resource Planning Specialist</h3>
+                                <p class="text-swiggy-orange font-semibold mb-2">GBC Solutions LLP</p>
+                                <p class="text-gray-600 mb-3">Nov 2023 - Jun 2024</p>
+                                <ul class="text-sm text-gray-700 space-y-1 text-left">
+                                    <li>• Designed Smart IoT-Based ERP for Alcohol Manufacturing</li>
+                                    <li>• Compliance with Dept. of Excise regulations</li>
+                                    <li>• Developed Church Management Systems</li>
+                                    <li>• Built IoT Bridge for automated inventory management</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">ERP</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">IoT</span>
+                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Manufacturing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center justify-center w-12 h-12 bg-purple-600 rounded-full border-4 border-white shadow-lg z-10">
+                            <i class="fas fa-cogs text-white"></i>
+                        </div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Roborosx -->
+                    <div class="timeline-item flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="relative flex items-center justify-center w-12 h-12 bg-white rounded-full border-4 border-swiggy-orange shadow-lg z-10">
+                            <i class="fas fa-rocket text-swiggy-orange"></i>
+                        </div>
+                        <div class="flex-1 pl-8">
+                            <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-r-4 border-swiggy-orange">
+                                <div class="flex items-center mb-3">
+                                    <i class="fas fa-user-tie text-2xl text-blue-600 mr-3"></i>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Co-Founder</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Software Engineer & Trainer</h3>
+                                <p class="text-swiggy-orange font-semibold mb-2">Roborosx Omni Tech Solutions</p>
+                                <p class="text-gray-600 mb-3">Jun 2021 - Oct 2023</p>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• Developed 70+ projects across various industries</li>
+                                    <li>• Built MVP for Roborosx E2E EDU ERP Solution</li>
+                                    <li>• Created Saveme.life and Rosx IoTa Server</li>
+                                    <li>• Conducted training workshops and mentored developers</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Leadership</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Training</span>
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">MVP Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bright Ads -->
+                    <div class="timeline-item flex items-center">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-l-4 border-swiggy-orange">
+                                <div class="flex items-center justify-end mb-3">
+                                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Internship</span>
+                                    <i class="fas fa-ad text-2xl text-orange-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Backend Developer</h3>
+                                <p class="text-swiggy-orange font-semibold mb-2">Bright Ads Digital India</p>
+                                <p class="text-gray-600 mb-3">Feb 2021 - May 2021</p>
+                                <ul class="text-sm text-gray-700 space-y-1 text-left">
+                                    <li>• Developed PHP backend systems</li>
+                                    <li>• Built REST API endpoints</li>
+                                    <li>• Gained experience in web development</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mt-4 justify-end">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">PHP</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">REST API</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex items-center justify-center w-12 h-12 bg-orange-600 rounded-full border-4 border-white shadow-lg z-10">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Innovative solutions spanning IoT, ERP systems, and web frameworks
+                </p>
+                <div class="w-24 h-1 bg-swiggy-orange mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Self POS System -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">IoT • Published</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Self POS System</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cloud-based checkout system using RFID and QR via MQTT protocol. Published in International Research Journal.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">RFID</span>
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">QR Code</span>
+                        <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm">MQTT</span>
+                        <span class="bg-orange-50 text-orange-700 px-2 py-1 rounded text-sm">Cloud</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-blue-600 hover:text-blue-800 font-semibold flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Publication
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-purple-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remote Wind Monitoring -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-wind text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">IoT • Analytics</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Remote Wind Monitoring</h3>
+                    <p class="text-gray-600 mb-4">
+                        Real-time data logging and analysis platform using NodeMCU sensors and PHP backend for environmental monitoring.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">NodeMCU</span>
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">PHP</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded text-sm">Analytics</span>
+                        <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm">Real-time</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-green-600 hover:text-green-800 font-semibold flex items-center">
+                            <i class="fas fa-code mr-2"></i>View Code
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-green-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-yellow-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosx MVC -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-code-branch text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Framework • PHP</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Rosx MVC Framework</h3>
+                    <p class="text-gray-600 mb-4">
+                        Laravel-inspired PHP web framework built from scratch with modern MVC architecture and developer-friendly features.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm">PHP</span>
+                        <span class="bg-red-50 text-red-700 px-2 py-1 rounded text-sm">MVC</span>
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">Framework</span>
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">Custom</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-purple-600 hover:text-purple-800 font-semibold flex items-center">
+                            <i class="fab fa-github mr-2"></i>View on GitHub
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-purple-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-red-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rosx Edu Soft -->
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl border border-orange-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">ERP • Education</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Rosx Edu Soft</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive ERP solution for educational institutions with student management, attendance, and academic tracking.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-orange-50 text-orange-700 px-2 py-1 rounded text-sm">ERP</span>
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">Education</span>
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">Management</span>
+                        <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm">Academic</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-orange-600 hover:text-orange-800 font-semibold flex items-center">
+                            <i class="fas fa-eye mr-2"></i>Live Demo
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-orange-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMS Consumption Monitor -->
+                <div class="card-hover bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl border border-teal-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Flask • Analytics</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">SMS Consumption Monitor</h3>
+                    <p class="text-gray-600 mb-4">
+                        Python Flask web application for monitoring and analyzing SMS consumption patterns with real-time dashboards.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-teal-50 text-teal-700 px-2 py-1 rounded text-sm">Python</span>
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">Flask</span>
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">Analytics</span>
+                        <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded text-sm">Monitoring</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-teal-600 hover:text-teal-800 font-semibold flex items-center">
+                            <i class="fas fa-play mr-2"></i>Run Demo
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-teal-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saveme.life -->
+                <div class="card-hover bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl border border-red-200 group">
+                    <div class="mb-6">
+                        <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Healthcare • Social</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Saveme.life</h3>
+                    <p class="text-gray-600 mb-4">
+                        Emergency healthcare platform connecting patients with medical services and volunteers during critical situations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-red-50 text-red-700 px-2 py-1 rounded text-sm">Healthcare</span>
+                        <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded text-sm">Emergency</span>
+                        <span class="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">Platform</span>
+                        <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded text-sm">Social Impact</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="text-red-600 hover:text-red-800 font-semibold flex items-center">
+                            <i class="fas fa-globe mr-2"></i>Visit Site
+                        </button>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-red-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-blue-600 rounded-full opacity-10"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full opacity-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Stats -->
+            <div class="mt-20 grid md:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-project-diagram text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-blue-600 mb-2">70+</h3>
+                    <p class="text-gray-700 font-medium">Projects Completed</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-green-600 mb-2">5+</h3>
+                    <p class="text-gray-700 font-medium">Industries Served</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-purple-600 mb-2">1</h3>
+                    <p class="text-gray-700 font-medium">Published Research</p>
+                </div>
+                <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-orange-600 mb-2">50+</h3>
+                    <p class="text-gray-700 font-medium">Developers Trained</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Education & Certifications</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Academic foundation and continuous learning in cutting-edge technologies
+                </p>
+                <div class="w-24 h-1 bg-swiggy-orange mx-auto mt-6"></div>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center">
+                    <i class="fas fa-university text-swiggy-orange mr-3"></i>Education
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-600">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bachelor's Degree</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Computer Science Engineering</h4>
+                        <p class="text-swiggy-orange font-semibold mb-1">M.V.J College of Engineering</p>
+                        <p class="text-gray-600 mb-2">Bengaluru, India</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">2019 - 2023</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">CGPA: 7.5</span>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-green-600">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-book text-white text-2xl"></i>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Intermediate</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Science (PCMB)</h4>
+                        <p class="text-swiggy-orange font-semibold mb-1">Varadadri PU College</p>
+                        <p class="text-gray-600 mb-2">Bagepalli, India</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">2018 - 2019</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">75%</span>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white p-6 rounded-xl shadow-lg border-t-4 border-purple-600">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-school text-white text-2xl"></i>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Secondary</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 mb-2">Secondary Education</h4>
+                        <p class="text-swiggy-orange font-semibold mb-1">Shanthinikethan High School</p>
+                        <p class="text-gray-600 mb-2">Bagepalli, India</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">2016 - 2017</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">85.6%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center">
+                    <i class="fas fa-certificate text-swiggy-orange mr-3"></i>Certifications
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-600">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-python text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">Python Certification</h4>
+                                <p class="text-swiggy-orange font-semibold">IIT Bombay</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Advanced Python programming certification covering data structures, algorithms, and application development.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Completed: 2022</span>
+                            <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Verify
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-xl shadow-lg border-l-4 border-orange-600">
+                        <div class="flex items-center mb-4">
+                            <div class="w-14 h-14 bg-orange-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-html5 text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800">HTML Certification</h4>
+                                <p class="text-swiggy-orange font-semibold">IIT Bombay</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Comprehensive web development certification covering modern HTML5, CSS3, and responsive design principles.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Completed: 2022</span>
+                            <button class="text-orange-600 hover:text-orange-800 font-semibold">
+                                <i class="fas fa-external-link-alt mr-1"></i>Verify
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center">
+                    <i class="fas fa-language text-swiggy-orange mr-3"></i>Languages
+                </h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-green-600">
+                        <i class="fas fa-globe text-3xl text-green-600 mb-3"></i>
+                        <h4 class="font-bold text-gray-800 mb-1">English</h4>
+                        <p class="text-sm text-green-600 font-semibold">Fluent</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-blue-600">
+                        <i class="fas fa-home text-3xl text-blue-600 mb-3"></i>
+                        <h4 class="font-bold text-gray-800 mb-1">Kannada</h4>
+                        <p class="text-sm text-blue-600 font-semibold">Native</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-purple-600">
+                        <i class="fas fa-star text-3xl text-purple-600 mb-3"></i>
+                        <h4 class="font-bold text-gray-800 mb-1">Telugu</h4>
+                        <p class="text-sm text-purple-600 font-semibold">Native</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-lg border-b-4 border-orange-600">
+                        <i class="fas fa-briefcase text-3xl text-orange-600 mb-3"></i>
+                        <h4 class="font-bold text-gray-800 mb-1">Hindi</h4>
+                        <p class="text-sm text-orange-600 font-semibold">Professional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute inset-0">
+            <svg class="w-full h-full opacity-5" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#fc8019" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Let's Connect</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to discuss your next project or collaboration? I'd love to hear from you.
+                </p>
+                <div class="w-24 h-1 bg-swiggy-orange mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="card-hover bg-gradient-to-r from-swiggy-orange to-red-500 p-8 rounded-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="opacity-90">anooprathod7@gmail.com</p>
+                                </div>
+                            </div>
+                                                <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="opacity-90">+91-9886162566</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fab fa-linkedin-in text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/anoopsingam/" target="_blank" class="opacity-90 hover:underline">linkedin.com/in/anoopsingam/</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Additional Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-swiggy-orange bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-swiggy-orange"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Bengaluru, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-swiggy-orange bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-clock text-swiggy-orange"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Availability</h4>
+                                    <p class="text-gray-600">Open to new opportunities and collaborations</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-swiggy-orange bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-heart text-swiggy-orange"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Volunteer Work</h4>
+                                    <p class="text-gray-600">Developed software solutions for COVID-19 relief efforts (2020)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-swiggy-orange focus:border-transparent transition" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-swiggy-orange focus:border-transparent transition" placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-swiggy-orange focus:border-transparent transition" placeholder="What's this about?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-swiggy-orange focus:border-transparent transition" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-swiggy-orange hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start">
+                        <div class="w-10 h-10 bg-gradient-to-r from-swiggy-orange to-red-500 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">A</span>
+                        </div>
+                        <span class="ml-3 text-xl font-bold">Anoop N</span>
+                    </div>
+                    <p class="mt-2 text-gray-400 max-w-md">
+                        Senior Software Engineer specializing in backend systems, IoT solutions, and ERP platforms.
+                    </p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/anoopsingam/" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-swiggy-orange transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:anooprathod7@gmail.com" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-swiggy-orange transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-swiggy-orange transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Anoop N. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-swiggy-orange transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-swiggy-orange transition text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-swiggy-orange transition text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-swiggy-orange rounded-full shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Simple back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
